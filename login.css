@@ -1,0 +1,7 @@
+#spinner{
+    visibility: hidden;
+}
+
+#statusLabel{
+    transition: opacity 0.5s;
+}
