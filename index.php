@@ -28,6 +28,15 @@
 
     <body>
         <div id="templatesMiniatures">
+            <?php
+                $templatesPath = "Templates/*";
+                foreach(glob($templatesPath) as $templateFile)
+                {
+                    if(!is_dir($templateFile)) {
+                        include $templateFile;
+                    }
+                }
+            ?>
         </div>
         <div id="widgetsPanel">
         </div>
@@ -35,7 +44,15 @@
 
         </div>
 
+        <div id="editionPanel">
+            <button onclick="ClosePopup()">X</button>
+            <div id="templateToEdit">
 
+            </div>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="main.js"></script>
     </body>
 
 

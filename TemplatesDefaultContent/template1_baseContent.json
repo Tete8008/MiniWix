@@ -1,0 +1,16 @@
+{
+    "contents":{
+        "t1_h1_0":{
+            "innerText":"Gros titre"
+        },
+        "t1_label_0":{
+            "innerText":"Label"
+        },
+        "t1_p_0":{
+            "innerText":"Paragraphe"
+        },
+        "t1_img_0":{
+            "src":"Images/sans.png"
+        }
+    }
+}

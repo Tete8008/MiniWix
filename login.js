@@ -14,7 +14,7 @@ function SetLoading(on){
 
 
 connectBtn.onclick=function(event){
-    console.log(username.innerText);
+    
     //data validation
     if (username.value!="" && password.value!=""){
         //disable input while waiting for the request, to prevent the user from sending multiple requests at once
@@ -54,6 +54,10 @@ function LoginResponseComplete(xhr,status){
 function LoginResponseSuccess(data,status){
     console.log(data);
     if (data.connected){
+
+        sessionStorage.setItem("templates",data.templates);
+
+        //redirect to main page
         window.location.href=".";
     }else{
         PrintStatus(data.errorMessage);

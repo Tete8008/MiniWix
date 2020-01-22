@@ -1,0 +1,32 @@
+#templatesMiniatures{
+    display:inline-block;
+
+}
+
+.template{
+    background-color: aliceblue;
+    border: 1px solid grey;
+    border-radius:2px;
+    transition: all 0.5s;
+}
+
+.template div{
+    transform : translate(-30%, -40%) scale(0.25);
+}
+
+.template:hover{
+    cursor: pointer;
+    transform : scale(1.05);
+    transition: transform 0.5s;
+}
+
+#editionPanel{
+    margin: 0 auto;
+    width:50%;
+    height:700px;
+    background-color:lightgrey;
+    position: absolute;
+    top:10%;
+    left:25%;
+    visibility: hidden;
+}
