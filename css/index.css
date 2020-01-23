@@ -1,6 +1,6 @@
 #templatesMiniatures{
     display:inline-block;
-
+    margin:20px;
 }
 
 .template{
@@ -11,7 +11,7 @@
 }
 
 .template div{
-    transform : translate(-30%, -40%) scale(0.25);
+    transform : translate(-35%, -35%) scale(0.25);
 }
 
 .template:hover{
@@ -29,4 +29,31 @@
     top:10%;
     left:25%;
     visibility: hidden;
+    
+}
+
+
+#widgetsPanel{
+    width:15%;
+    height:700px;
+    left:10%;
+    background-color: lightslategray;
+    position:absolute;
+    top:10%;
+    visibility: hidden;
+}
+
+
+
+.widgetCreator{
+    display:block;
+    margin:10%;
+    padding:10%;
+    width:80%;
+    font-size:2vw;
+}
+
+
+#templateToEdit{
+    background-color: whitesmoke;
 }
