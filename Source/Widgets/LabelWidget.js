@@ -16,9 +16,18 @@ class LabelWidget extends Widget{
 
     applyStyleToElement(){
         super.applyStyleToElement();
-        this.htmlElement.innerText=this.value;
-        this.htmlElement.style.fontSize=this.fontSize;
-        this.htmlElement.style.color=this.fontColor;
-        this.htmlElement.style.fontFamily=this.font;
+        let htmlElement=document.getElementById(this.htmlElementId);
+        htmlElement.innerText=this.value;
+        htmlElement.style.fontSize=this.fontSize;
+        htmlElement.style.color=this.fontColor;
+        htmlElement.style.fontFamily=this.font;
+    }
+
+    fromElement(htmlElement){
+        super.fromElement(htmlElement);
+        this.value=htmlElement.innerText;
+        this.fontSize=htmlElement.style.fontSize;
+        this.fontColor=htmlElement.style.fontColor;
+        this.font=htmlElement.style.fontFamily;
     }
 }

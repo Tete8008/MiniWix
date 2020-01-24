@@ -10,10 +10,21 @@ class ImageWidget extends Widget{
 
     applyStyleToElement(){
         super.applyStyleToElement();
-        this.htmlElement.alt=this.value;
-        this.htmlElement.style.fontSize=this.fontSize;
-        this.htmlElement.style.color=this.fontColor;
-        this.htmlElement.style.fontFamily=this.font;
-        this.htmlElement.src=this.src;
+        let htmlElement=document.getElementById(this.htmlElementId);
+        htmlElement.alt=this.value;
+        htmlElement.style.fontSize=this.fontSize;
+        htmlElement.style.color=this.fontColor;
+        htmlElement.style.fontFamily=this.font;
+        htmlElement.src=this.src;
+    }
+
+    fromElement(htmlElement){
+        super.fromElement(htmlElement);
+        this.src=htmlElement.src;
+        let rect=htmlElement.getBoundingClientRect();
+        htmlElement.onload=function(){
+            widgets[this.id].size={x:this.width,y:this.height};
+        }
+        this.size={x:rect.right-rect.left,y:rect.bottom-rect.top};
     }
 }

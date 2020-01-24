@@ -55,7 +55,7 @@ function LoginResponseSuccess(data,status){
     console.log(data);
     if (data.connected){
 
-        sessionStorage.setItem("templates",data.templates);
+        sessionStorage.setItem("templates",JSON.stringify(data.templates));
 
         //redirect to main page
         window.location.href=".";

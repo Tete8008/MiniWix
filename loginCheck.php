@@ -32,22 +32,24 @@
                     $response["connected"]=true;
                     session_start();
                     $_SESSION["connected"]=true;
+                    $_SESSION["username"]=$username;
                     session_write_close();
                     
+                    $userId=$result["ID"];
                     //get the templates from the templates table with the id from the users table
-                    $stmt=$db->prepare("SELECT * FROM templates WHERE UserID = :id");
+                    $stmt=$db->prepare("SELECT TemplatesData, ID FROM templates WHERE UserID = :id");
                     $stmt->execute(array(
-                        ":id"=>$result["ID"]
+                        ":id"=>$userId
                     ));
-                    $result=$stmt->fetch();
-                    $response["templates"]=$result["TemplatesData"];
+                    $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+                    $response["templates"]=$result;
 
                     //update the lastLoginDate
                     //actually doesn't seem to update the date for some obscure reason
                     $stmt=$db->prepare("UPDATE users SET LastLoginDate = :logindate WHERE ID = :id");
                     $stmt->execute(array(
                         ":logindate"=>date ("Y-m-d H:i:s"),
-                        ":id"=>$result["ID"]
+                        ":id"=>$userId
                     ));
 
                 }else{

@@ -1,15 +1,15 @@
 {
     "contents":{
-        "t1_label_0":{
+        "t3_label_0":{
             "innerText":"Gros titre"
         },
-        "t1_label_1":{
+        "t3_label_1":{
             "innerText":"Label"
         },
-        "t1_label_2":{
+        "t3_label_2":{
             "innerText":"Paragraphe"
         },
-        "t1_img_0":{
+        "t3_img_0":{
             "src":"Images/sans.png"
         }
     }

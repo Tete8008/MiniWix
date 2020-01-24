@@ -11,6 +11,12 @@ class LinkWidget extends LabelWidget{
 
     applyStyleToElement(){
         super.applyStyleToElement();
-        this.htmlElement.href=this.href;
+        let htmlElement=document.getElementById(this.htmlElementId);
+        htmlElement.href=this.href;
+    }
+
+    fromElement(htmlElement){
+        super.fromElement(htmlElement);
+        this.href=htmlElement.href;
     }
 }
